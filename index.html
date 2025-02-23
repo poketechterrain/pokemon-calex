@@ -8,19 +8,31 @@
 </head>
 <body>
     <div id="game-container">
-        <h1>Pokémon Calex</h1>
-        <div id="map"></div>
-        <div id="output"></div>
-        <div id="controls">
-            <button onclick="movePlayer(0, -1)">Up</button>
-            <button onclick="movePlayer(0, 1)">Down</button>
-            <button onclick="movePlayer(-1, 0)">Left</button>
-            <button onclick="movePlayer(1, 0)">Right</button>
-            <button onclick="challengeGym()">Challenge Gym</button>
+        <div id="screen">
+            <div id="map"></div>
+            <div id="message-box" style="display: none;"></div>
+            <div id="battle-container" style="display: none;">
+                <div id="player-pokemon" class="pokemon-display"></div>
+                <div id="opponent-pokemon" class="pokemon-display"></div>
+                <div id="battle-message"></div>
+                <div id="battle-controls"></div>
+            </div>
+            <div id="menu" style="display: none;">
+                <button onclick="showPokemon()">Pokémon</button>
+                <button onclick="showBag()">Bag</button>
+                <button onclick="saveGame()">Save</button>
+                <button onclick="closeMenu()">Exit</button>
+            </div>
+            <div id="pokemon-list" style="display: none;"></div>
         </div>
-        <div id="battle-container" style="display: none;">
-            <div id="battle-output"></div>
-            <div id="battle-controls"></div>
+        <div id="controls">
+            <button onclick="movePlayer(0, -1)">↑</button>
+            <div>
+                <button onclick="movePlayer(-1, 0)">←</button>
+                <button onclick="movePlayer(1, 0)">→</button>
+            </div>
+            <button onclick="movePlayer(0, 1)">↓</button>
+            <button onclick="openMenu()">Menu</button>
         </div>
     </div>
     <script src="script.js"></script>
